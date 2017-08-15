@@ -1,13 +1,13 @@
-//js file
-$(function(){
-  $('.custom-modal').click(function(e){
-    e.preventDefault();
-    var mymodal = $('#joinModal');
-    mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
-    mymodal.modal('show');
+// //js file
+// $(function(){
+//   $('.custom-modal').click(function(e){
+//     e.preventDefault();
+//     var mymodal = $('#joinModal');
+//     mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
+//     mymodal.modal('show');
     
-  });
-})
+//   });
+// })
 
     // Initialize Firebase
     var config = {
@@ -20,27 +20,61 @@ $(function(){
   };
   firebase.initializeApp(config);
 
-  $(document).ready(function() {
   var messageAppReference = firebase.database();
 
-  $('#message-form').submit(function(event) {
-    // by default a form submit reloads the DOM which will subsequently reload all our JS
-    // to avoid this we preventDefault()
-    event.preventDefault();
+  $(document).ready(function() {
+    
 
-    // grab user message input
-    var message = $('#message').val();
+    $('#submit-btn').click(function(event) {
+      event.preventDefault();
+      console.log('inhere')
+      // by default a form submit reloads the DOM which will subsequently reload all our JS
+      // to avoid this we preventDefault()
+      
 
-    // clear message input (for UX purposes)
-    $('#message').val('');
+      // grab user message input
+      var userName = $('#senders-name').val();
+      var lastName = $('#senders-last-name').val();
+      var message = $('#message-text').val();
+      var emailAddress = $('#emailAddress').val();
+      console.log('userName', userName)
 
-    // create a section for messages data in your db
-    var messagesReference = messageAppReference.ref('messages');
+      // clear message input (for UX purposes)
+      $('#message-text').val('');
+      $('#senders-name').val('');
+      $('#senders-last-name').val('');
+      $('#emailAddress').val('');
 
-    // use the set method to save data to the messages
-    messagesReference.push({
-      message: message,
-      votes: 0
-    })
+      // create a section for messages data in your db
+      var messagesReference = messageAppReference.ref('messages');
+      //close modal
+      $('#joinModal').modal('hide');
+      // use the set method to save data to the messages
+      messagesReference.push({
+        firstName: userName,
+        lastName: lastName,
+        email: emailAddress,
+        message: message
+      });
+    });
+});
+
+function getSignUpInfo() {
+
+  // use reference to appgit st database to listen for changes in messages data
+
+  messageAppReference.ref('messages').on('value', function(results) {
+
+    // iterate through results coming from database call; messages
+
+    results.forEach(function (info) {
+      var messaged = info.val().message;
+      var firstName = info.val().userName;
+      var lastName = info.val().lastName;
+      console.log('messaged', messaged)
+      // bind the results to the DOM
+      var mymodal = $('#joinModal');
+      mymodal.find('.modal-title').text(firstName);
+    });
   })
-})
+}
