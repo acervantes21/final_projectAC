@@ -1,0 +1,401 @@
+@font-face {
+  font-family: proxima-nova;
+  src: url(../fonts/Reader-Medium.otf);
+}
+
+
+
+/* Global element styling */
+html {
+  height: 100%;
+}
+body {  
+  font: 16px/26px 'proxima-nova', sans-serif;
+  font-weight: 100;
+  background-color: white;
+  position: relative;
+  min-height: 100%;
+}
+
+p, ul {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+a {
+  text-decoration: underline;
+  color: #BC1F2F;
+}
+
+h1 {
+  font: 24px 'proxima-nova', sans-serif;
+  text-transform: uppercase;
+  color: #BC1F2F;
+  margin: 0 auto;
+  padding: 50px 0 20px 0;
+}
+
+h2 {
+  font: 18px 'ReaderBold', sans-serif;
+  text-transform: uppercase;
+  color: #BC1F2F;
+}
+
+/* General Classes */
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  padding: 5px;
+  background-color: black;
+  bottom: 0;
+}
+
+.subFooter {
+  width: 100%;
+  padding: 40px;
+  background-color: white;
+}
+
+.footer .copy {
+  font-size: 10px;
+  color: #fff;
+  text-align: right;
+  margin-right: 15px;
+}
+
+.textContent {
+  max-width: 1000px;
+  width: 100%;
+  padding: 100px 20px 50px 20px;
+  text-align: justify;
+  text-align-last: center;
+}
+
+
+.outline-btn {
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 306PX;
+}
+
+.outline-btn {
+  margin-bottom: 29px;
+}
+
+.outline-btn a {
+  color: black;
+}
+
+.outline-btn .btn {
+  border: 2px solid black;
+  padding-top: 19px;
+  border-radius: 0px;
+  width: 306px;
+  height: 60px;
+  font-size: 18px
+}
+
+.outline-btn .btn:hover {
+  border-color: #BC1F2F;
+  color: #BC1F2F;
+}
+
+
+/* Page-specific */
+.landing .header {
+  background: url(../img/Landing_big.png) top center;
+  width: 100%;
+  height: 0;
+  padding-top: 32.53%;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing .header .hello {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  color: #fff;
+  
+}
+
+.landing .header .centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  }
+
+.landing .header .quick-intro {
+  font-size: 20px;
+  color: #fff;
+}
+.landing .textContent .titles {
+  font-size: 36px;
+}
+.landing .textContent p {
+  font-size: 16px;
+  line-height: 30px;
+  margin: 80px auto 30px auto;
+  text-align: justify;
+}
+.landing .classes-section {
+  max-width: 1000px;
+  width: 100%;
+  padding: 100px 20px 50px 20px;
+  text-align: justify;
+}
+
+.landing .classes-section img {
+  float: right;
+  padding-left: 20px;
+}
+.landing .classes-section .titles {
+  font-size: 36px;
+}
+
+.landing .classes-section p {
+  font-size: 16px;
+  line-height: 30px;
+  margin: 30px auto 30px auto;
+}
+
+.landing .textContent .titles {
+  font-size: 36px;
+}
+.landing .landing_content {
+  background: url(../img/Landing_content.jpg) 
+}
+
+.landing .landing_content .outline-btn .btn{
+  border: 2px solid white;
+  color: white;
+}
+
+.landing .landing_content_2 {
+  background: url(../img/Landing_content_2.jpg) 
+}
+
+.landing .parallax-item {
+  width: 100%;
+  min-height: 50vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.aboutus .header {
+  background: url(../img/About_us_content.jpg)top center;
+  width: 100%;
+  height: 0;
+  padding-top: 54%;
+  position: relative;  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutus .header .meet {
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 80px;
+  color: #fff;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  
+}
+
+/* About Page*/
+
+.aboutus .header .centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  }
+
+
+
+/* Nav bar styling */
+.ussd-nav {
+  display: block; 
+  background-color: black;
+  padding: 14px 0 14px 14px; 
+}
+
+@media only screen and (max-width: 767px) {
+  .ussd-nav .logo img{
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.ussd-nav .logo {
+  display: inline-block;
+}
+
+.ussd-nav .logo img {
+  height: 40px;
+}
+
+.ussd-nav .ussd-navbar {
+  margin-top: 8px;
+}
+
+.navbar-toggle {
+  float: left;
+}
+
+.navbar-toggle .icon-bar{
+  background-color: black;
+}
+
+@media only screen and (min-width: 768px) {
+  .ussd-nav .ussd-navbar {
+    float: right;
+  }
+}
+
+.ussd-nav .ussd-navbar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.ussd-nav .ussd-navbar a:hover {
+  color: yellow;
+  background-color: transparent;
+}
+
+.ussd-nav .ussd-navbar a.active {
+  color: red;
+}
+
+@media only screen and (max-width: 750px) {    
+  .landing .header {
+    background: url(../img/Landing_small.jpg) top center;
+    background-size: cover;
+  }
+
+  .landing .header .hello {
+    font-size: 80px;
+    line-height: 60px;
+  }  
+
+  .landing .header .centering {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .working .header {
+    background: url(../img/working_small.jpg) top center;
+    background-size: cover;
+  }
+  
+  .internshipsPage .header {
+    background: url(../img/internships_small.jpg) top center;
+    background-size: cover;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  .ussd-nav {
+    padding: 10px 0 10px 10px;
+  }  
+
+  .ussd-nav .logo img {
+    height: 28px;
+  }
+
+  .landing .header .hello {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .footer .copy {
+    margin-right: 5px;
+  }
+
+  .subFooter .copy {
+    background-color: white;
+  }
+
+  .internshipsPage .internshipSection h5 {
+    text-align: center;
+  }
+
+  .internshipsPage .infoSection {
+    padding-top: 1px;
+  }
+
+  .centerInfo .infoSection h1 {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .internshipsPage .infoSection p:last-child {
+    text-align-last: center;
+  }
+
+  .textContent {
+    padding-bottom: 40px;
+  }
+
+  .internshipsPage .internshipOpenings {
+    max-height: 350px;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .ussd-nav .logo img {
+    height: 20px;
+  }
+
+  .ussd-nav .ussd-navbar a {
+    padding: 5px 5px;
+    font-size: 20px;
+  }
+} 
+
+@media only screen and (max-width: 1000px) {
+  .internshipsPage .centerInfo {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .internshipsPage .infoSection {
+    margin-top: 0px;
+  }
+  .internshipsPage .internshipSection {
+    margin-bottom: 0px;
+  }
+  .subFooter {
+    padding: 0px;
+  }
+}
+
