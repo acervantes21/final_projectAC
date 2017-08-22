@@ -1,30 +1,30 @@
 // //js file
-$(function(){
-  $('.tigers-modal').click(function(e){
-    // e.preventDefault();
-    var mymodal = $('#joinModal');
-    mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
-    mymodal.modal('show');
-  });
-  $('.dragons-modal').click(function(e){
-    // e.preventDefault();
-    var mymodal = $('#joinModal');
-    mymodal.find('.modal-title').text('Try a Little Dragons Class');
-    mymodal.modal('show');
-  });
-  $('.flying-modal').click(function(e){
-    // e.preventDefault();
-    var mymodal = $('#joinModal');
-    mymodal.find('.modal-title').text('Try a Flying Tigers Class');
-    mymodal.modal('show');
-  });
-  $('.adult-modal').click(function(e){
-    // e.preventDefault();
-    var mymodal = $('#joinModal');
-    mymodal.find('.modal-title').text('Try an Adult Class');
-    mymodal.modal('show');
-  });
-})
+// $(function(){
+//   $('.tigers-modal').click(function(e){
+//     // e.preventDefault();
+//     var mymodal = $('#joinModal');
+//     mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
+//     mymodal.modal('show');
+//   });
+//   $('.dragons-modal').click(function(e){
+//     // e.preventDefault();
+//     var mymodal = $('#joinModal');
+//     mymodal.find('.modal-title').text('Try a Little Dragons Class');
+//     mymodal.modal('show');
+//   });
+//   $('.flying-modal').click(function(e){
+//     // e.preventDefault();
+//     var mymodal = $('#joinModal');
+//     mymodal.find('.modal-title').text('Try a Flying Tigers Class');
+//     mymodal.modal('show');
+//   });
+//   $('.adult-modal').click(function(e){
+//     // e.preventDefault();
+//     var mymodal = $('#joinModal');
+//     mymodal.find('.modal-title').text('Try an Adult Class');
+//     mymodal.modal('show');
+//   });
+// })
 
     // Initialize Firebase
     var config = {
