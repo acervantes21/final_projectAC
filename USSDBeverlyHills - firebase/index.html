@@ -30,7 +30,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <!-- Enable bootstrap 4 theme -->
+    <script>window.__theme = 'bs4';</script>
 
     <!-- App CSS -->
     <link href="css/app.css" rel="stylesheet">
@@ -50,24 +53,24 @@
   <body>
     <div class="landing">
       <!-- mobile toggle button -->
-      <button aria-controls="navbar" aria-expanded="false" class="collapsed navbar-toggle" data-target="#navbar" data-toggle="collapse" type="button"> 
-          <span class="sr-only">Toggle navigation</span> 
-          <span class="icon-bar"></span> <span class="icon-bar"></span> 
-          <span class="icon-bar"></span> 
+      <nav class='navbar navbar-toggleable-lg'>
+        <button aria-controls="navbarNav" aria-expanded="false" class="navbar-toggler navbar-toggler-right" data-target="#navbar" data-toggle="collapse" type="button"> 
+          <span class="navbar-toggler-icon"></span> 
         </button>
       <!-- navigation -->
-      <div class="ussd-nav ">
-        <a class="logo" href="index.html">
-        </a>
-        <div id="navbar" class="ussd-navbar collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">CLASSES</a></li>
-            <li><a href="#">EVENTS</a></li>
-            <li><a target='_blank' href="watch.html">WATCH</a></li>
-            <li><a target='_blank' href="about.html">ABOUT</a></li>
-          </ul>
+        <div class="ussd-nav ">
+          <a class="logo" href="index.html">
+          </a>
+          <div id="navbar" class="ussd-navbar collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="#">CLASSES</a></li>
+              <li class="nav-item"><a href="#">EVENTS</a></li>
+              <li class="nav-item"><a href="watch.html">WATCH</a></li>
+              <li class="nav-item"><a href="about.html">ABOUT</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
        <!-- header -->
       <div class="header">
         <div class='centering'>
@@ -110,7 +113,7 @@
             <div class="col-6 col-md-4">
               <h2>TINY TIGERS</h2>
               <p>Mon, Wed, Fri: 3:30pm-4pm</p>
-              <button type="button" class="btn btn-primary custom-modal" data-toggle="modal" data-target="#joinModal">JOIN</button>
+              <button type="button" class="btn btn-primary tigers-modal" data-toggle="modal" data-target="#joinModal">JOIN</button>
             </div>
             <div class="col col-md-8">
               <div>
@@ -129,6 +132,7 @@
               <h2>LITTLE DRAGONS</h2>
               <p>Mon, Wed: 4:30pm-5:15pm</p>
               <p>Sat: 11am-11:45am</p>
+              <button type="button" class="btn btn-primary dragons-modal" data-toggle="modal" data-target="#joinModal">JOIN</button>
             </div>
             <div class="col col-md-8">
               <div>
@@ -147,6 +151,7 @@
               <h2>FLYING TIGERS</h2>
               <p>Tue, Thu: 5pm-6pm</p>
               <p>Sat: 11am-11:45am</p>
+              <button type="button" class="btn btn-primary flying-modal" data-toggle="modal" data-target="#joinModal">JOIN</button>
             </div>
             <div class="col col-md-8">
               <div>
@@ -165,6 +170,7 @@
               <h2>ADULT GROUP</h2>
               <p>Tue, Thu: 7pm-8pm</p>
               <p>Sat: 9am-10am</p>
+              <button type="button" class="btn btn-primary adult-modal" data-toggle="modal" data-target="#joinModal">JOIN</button>
             </div>
             <div class="col col-md-8">
               <div>
@@ -235,6 +241,25 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary" id='submit-btn' >Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+             <!-- Modal -->
+      <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

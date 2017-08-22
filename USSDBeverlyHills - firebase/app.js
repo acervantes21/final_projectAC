@@ -1,13 +1,30 @@
 // //js file
-// $(function(){
-//   $('.custom-modal').click(function(e){
-//     e.preventDefault();
-//     var mymodal = $('#joinModal');
-//     mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
-//     mymodal.modal('show');
-    
-//   });
-// })
+$(function(){
+  $('.tigers-modal').click(function(e){
+    // e.preventDefault();
+    var mymodal = $('#joinModal');
+    mymodal.find('.modal-title').text('Try a Tiny Tigers Class');
+    mymodal.modal('show');
+  });
+  $('.dragons-modal').click(function(e){
+    // e.preventDefault();
+    var mymodal = $('#joinModal');
+    mymodal.find('.modal-title').text('Try a Little Dragons Class');
+    mymodal.modal('show');
+  });
+  $('.flying-modal').click(function(e){
+    // e.preventDefault();
+    var mymodal = $('#joinModal');
+    mymodal.find('.modal-title').text('Try a Flying Tigers Class');
+    mymodal.modal('show');
+  });
+  $('.adult-modal').click(function(e){
+    // e.preventDefault();
+    var mymodal = $('#joinModal');
+    mymodal.find('.modal-title').text('Try an Adult Class');
+    mymodal.modal('show');
+  });
+})
 
     // Initialize Firebase
     var config = {
@@ -23,7 +40,6 @@
   var messageAppReference = firebase.database();
 
   $(document).ready(function() {
-    
 
     $('#submit-btn').click(function(event) {
       event.preventDefault();
@@ -32,12 +48,11 @@
       // to avoid this we preventDefault()
       
 
-      // grab user message input
+      // grab user info input
       var userName = $('#senders-name').val();
       var lastName = $('#senders-last-name').val();
       var message = $('#message-text').val();
       var emailAddress = $('#emailAddress').val();
-      console.log('userName', userName)
 
       // clear message input (for UX purposes)
       $('#message-text').val('');
@@ -45,8 +60,8 @@
       $('#senders-last-name').val('');
       $('#emailAddress').val('');
 
-      // create a section for messages data in your db
-      var messagesReference = messageAppReference.ref('messages');
+      // create a section for userInfo data in your db
+      var messagesReference = messageAppReference.ref('userInfo');
       //close modal
       $('#joinModal').modal('hide');
       // use the set method to save data to the messages
@@ -56,25 +71,31 @@
         email: emailAddress,
         message: message
       });
+      getSignUpInfo();
     });
+
 });
 
 function getSignUpInfo() {
-
+  // retrieve sender info when on .on(0)
   // use reference to appgit st database to listen for changes in messages data
-
-  messageAppReference.ref('messages').on('value', function(results) {
-
+  messageAppReference.ref('userInfo').on('value', function(results) {
     // iterate through results coming from database call; messages
-
+    
     results.forEach(function (info) {
+      console.log('ingo', info.val().message)
       var messaged = info.val().message;
-      var firstName = info.val().userName;
+      var firstName = info.val().firstName;
       var lastName = info.val().lastName;
-      console.log('messaged', messaged)
-      // bind the results to the DOM
-      var mymodal = $('#joinModal');
-      mymodal.find('.modal-title').text(firstName);
+      var successMod = $('#successModal');
+      console.log('info received' , firstName)
+      successMod.find('.modal-title').html('USSD Beverly Hills');
+      successMod.find('.modal-body').html('Thank you for contacting us ' + firstName +'.  You will hear from us shortly');
+      successMod.modal('show');
     });
+    
+  }, function(error){
+       console.log(error)
   })
+  
 }
