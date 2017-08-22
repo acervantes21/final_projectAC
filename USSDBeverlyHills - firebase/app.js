@@ -28,7 +28,7 @@
 
     // Initialize Firebase
     var config = {
-    apiKey: "AIzaSyAK-1lFr2Xfu4csW7-h-ZytxpxyEhHx_yo",
+    apiKey: "",
     authDomain: "beverlyhillskarate-1323c.firebaseapp.com",
     databaseURL: "https://beverlyhillskarate-1323c.firebaseio.com",
     projectId: "beverlyhillskarate-1323c",
